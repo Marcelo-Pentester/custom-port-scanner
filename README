@@ -1,0 +1,75 @@
+📘 Documentação – Ferramenta de Scanner de Portas em Python
+🧠 Visão Geral
+Este script em Python realiza varredura de portas TCP em um host alvo e identifica serviços comuns associados. É otimizado para ambientes corporativos, com suporte a múltiplas portas e execução paralela para rapidez.
+
+📦 Requisitos
+Python 3.6+
+
+Nenhuma biblioteca externa (apenas socket, concurrent.futures e sys)
+
+🚀 Instalação
+Salve o código em um arquivo chamado port_scanner.py.
+
+Torne o script executável:
+
+bash
+Copy
+Edit
+chmod +x port_scanner.py
+Execute via terminal:
+
+./port_scanner.py <IP ou HOST> [porta1 porta2 porta3 ...]
+💡 Exemplos de Uso
+1. Escanear portas comuns:
+
+./port_scanner.py 192.168.1.100
+2. Escanear portas específicas:
+
+./port_scanner.py 192.168.1.100 22 80 443
+3. Modo verificação rápida:
+
+python3 port_scanner.py example.com
+⚙️ Funcionamento
+Entrada: IP ou hostname e lista de portas (opcional).
+
+Saída: Lista de portas abertas, com nome do serviço (se conhecido).
+
+Usa ThreadPoolExecutor para escanear portas em paralelo.
+
+Timeout padrão de 1.5s por conexão.
+
+🧪 Portas Suportadas (por padrão)
+Porta	Serviço
+21	FTP
+22	SSH
+23	TELNET
+25	SMTP
+53	DNS
+80	HTTP
+110	POP3
+143	IMAP
+443	HTTPS
+3306	MySQL
+3389	RDP
+5900	VNC
+8080	HTTP-Alt
+6379	Redis
+5432	PostgreSQL
+
+🛡️ Segurança e Ética
+Esta ferramenta é para fins educacionais e auditorias autorizadas.
+
+Nunca use sem permissão explícita em redes de terceiros.
+
+
+📂 Estrutura do Código
+text
+Copy
+Edit
+port_scanner.py
+├── scan_port(host, port)
+├── scan_host(host, ports)
+├── main()
+👨‍💻 Autor
+Ferramenta criada por: Marcelo Pentester
+Propósito: Auditoria de redes corporativas, simulações de segurança, e treinamento.
